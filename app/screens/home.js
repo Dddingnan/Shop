@@ -19,7 +19,7 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 class Home extends Component {
 
   static navigationOptions = ({ navigation }) => ({
-      title: "首頁測試",
+      title: "首頁",
       headerLeft: (
         <Icon name="menu" size={30}
         color={'white'}
@@ -59,12 +59,13 @@ class Home extends Component {
       <View>
 
       <SearchBar
-      showLoading
-      inputStyle={{backgroundColor: 'white'}}
+      lightTheme
+      searchIcon={<Icon name="search"/>}
+      clearIcon={{ color: 'blue' }}
       containerStyle={{backgroundColor: 'white',}}
-      cancelButtonTitle="Cancel"
+      inputContainerStyle={{backgroundColor: '#d9d9d9'}}
+      cancelButtonTitle="取消"
       placeholderTextColor="black"
-      platform="ios"
       placeholder='搜尋' />
 
         <Swiper style={styles.wrapper}
