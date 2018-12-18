@@ -19,7 +19,7 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 class Home extends Component {
 
   static navigationOptions = ({ navigation }) => ({
-      title: "首頁s",
+      title: "首頁測試",
       headerLeft: (
         <Icon name="menu" size={30}
         color={'white'}
