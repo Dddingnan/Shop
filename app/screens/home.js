@@ -15,6 +15,7 @@ import Swiper from 'react-native-swiper';
 import styles from '../config/styles';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
+import Category from './category';
 
 class Home extends Component {
 
@@ -22,6 +23,14 @@ class Home extends Component {
       title: "首頁",
       headerLeft: (
         <Icon name="menu" size={30}
+        color={'white'}
+        containerStyle={{paddingLeft: 10}}
+        onPress={() => navigation.openDrawer()}
+        underlayColor={'rgba(255,255,255,0)'}
+        />
+      ),
+      headerRight: (
+        <Icon name="shopping-cart" size={30}
         color={'white'}
         containerStyle={{paddingLeft: 10}}
         onPress={() => navigation.openDrawer()}
@@ -42,10 +51,6 @@ class Home extends Component {
   constructor(props){
   super(props)
   this.state={
-    id:'',
-    height:'',
-    fontSize:0
-
     }
 
 
@@ -60,43 +65,143 @@ class Home extends Component {
 
       <SearchBar
       lightTheme
-      searchIcon={<Icon name="search"/>}
+      searchIcon={<Icon name="search" color="#f4511e"/>}
       clearIcon={{ color: 'blue' }}
       containerStyle={{backgroundColor: 'white',}}
       inputContainerStyle={{backgroundColor: '#d9d9d9'}}
       cancelButtonTitle="取消"
-      placeholderTextColor="black"
-      placeholder='搜尋' />
+      placeholderTextColor="#f4511e"
+      placeholder='搜尋'
+      inputStyle={{fontWeight: 'bold'}}
+      />
 
-        <Swiper style={styles.wrapper}
-        height={verticalScale(240)}
-        autoplay={true}
+
+      <Swiper
+      style={styles.wrapper}
+      autoplay={true}
+      height={verticalScale(240)}
+      >
+        <View style={styles.slide}>
+        <Image
+        style = {{
+          width: Dimensions.get('window').width,
+          height: verticalScale(240),
+          margin:20,}}
+          source = {require('../../images/bose/a2.jpg')}
+          />
+        </View>
+        <View style={styles.slide}>
+        <Image
+        style = {{
+          width: Dimensions.get('window').width,
+          height: verticalScale(240),
+          margin:20,}}
+          source = {require('../../images/watch/w1.jpeg')}
+          />
+        </View>
+        <View style={styles.slide}>
+        <Image
+        style = {{
+          width: Dimensions.get('window').width,
+          height: verticalScale(240),
+          margin:20,}}
+          source = {require('../../images/xs/q3.jpg')}
+          />
+        </View>
+      </Swiper>
+
+
+        <View>
+        <Text>
+        Recommendation
+        </Text>
+        </View>
+
+        <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
         >
-          <View style={styles.slide1}>
-          <Image
-          style = {{
-            width: Dimensions.get('window').width,
-            height: verticalScale(240),}}
-            source = {require('../../images/bose/a2.jpg')}
-            />
-          </View>
-          <View style={styles.slide2}>
-          <Image
-          style = {{
-            width: Dimensions.get('window').width,
-            height: verticalScale(240),}}
-            source = {require('../../images/watch/w1.jpeg')}
-            />
-          </View>
-          <View style={styles.slide3}>
-          <Image
-          style = {{
-            width: Dimensions.get('window').width,
-            height: verticalScale(240),}}
-            source = {require('../../images/xs/q3.jpg')}
-            />
-          </View>
-        </Swiper>
+        <Category
+        imageUri={require('../../images/xs/q1.jpeg')}
+        />
+
+        <Category
+        imageUri={require('../../images/xs/q2.jpeg')}
+        />
+
+        <Category
+        imageUri={require('../../images/xs/q3.jpg')}
+        />
+
+        <Category
+        imageUri={require('../../images/xs/q4.jpg')}
+        />
+
+        </ScrollView>
+
+
+        <View>
+        <Text>
+        Hot
+        </Text>
+        </View>
+
+        <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        >
+        <Category
+        imageUri={require('../../images/watch/w1.jpeg')}
+        />
+
+        <Category
+        imageUri={require('../../images/watch/w2.jpg')}
+        />
+
+        <Category
+        imageUri={require('../../images/watch/w3.jpeg')}
+        />
+
+        <Category
+        imageUri={require('../../images/watch/w4.jpeg')}
+        />
+
+        </ScrollView>
+
+
+        <View>
+        <Text>
+        Recently
+        </Text>
+        </View>
+
+
+
+
+        <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        >
+        <Category
+        imageUri={require('../../images/bose/a1.jpg')}
+        />
+
+        <Category
+        imageUri={require('../../images/bose/a2.jpg')}
+        />
+
+        <Category
+        imageUri={require('../../images/bose/a3.jpeg')}
+        />
+
+        <Category
+        imageUri={require('../../images/bose/a4.jpg')}
+        />
+
+        </ScrollView>
+
+
+
 
 
         <Button
@@ -107,6 +212,10 @@ class Home extends Component {
           title="Go to Details"
           onPress={() => this.props.navigation.navigate('Details')}
         />
+
+
+
+
       </View>
       </ScrollView>
     );
