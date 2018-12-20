@@ -5,10 +5,9 @@ import {
   ScrollView,
   Button,
   Animated,
-  Easing
+  Easing,
 } from 'react-native';
 
-import welcome from './app/screens/welcome.js';
 import login from './app/screens/login.js';
 import signup from './app/screens/signup.js';
 import home from './app/screens/home.js';
@@ -34,7 +33,6 @@ const noTransitionConfig = () => ({
 })
 
 const Stack = createStackNavigator({
-  Welcome: { screen: welcome },
   Login: { screen: login },
   SignUp: { screen: signup },
   Navi: {

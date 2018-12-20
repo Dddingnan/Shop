@@ -45,7 +45,8 @@ const Footer = createBottomTabNavigator(
 		Shop: { screen: ShopStack,
 		navigationOptions: {
 		tabBarLabel: 'Shop',
-		tabBarIcon: ({ tintColor }) => <Icon name="check" size={30} color={tintColor} />,
+		tabBarIcon: ({ tintColor }) => <Icon name='heart'
+    type='font-awesome' size={30} color={tintColor} />,
 			},
 
       tabBarOptions: {
