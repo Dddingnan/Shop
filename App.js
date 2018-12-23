@@ -8,8 +8,7 @@ import {
   Easing,
 } from 'react-native';
 
-import login from './app/screens/login.js';
-import signup from './app/screens/signup.js';
+import welcome from './app/screens/welcome.js';
 import home from './app/screens/home.js';
 import drawer from './app/config/drawer.js';
 
@@ -33,8 +32,7 @@ const noTransitionConfig = () => ({
 })
 
 const Stack = createStackNavigator({
-  Login: { screen: login },
-  SignUp: { screen: signup },
+  Welcome: { screen: welcome },
   Navi: {
   screen: drawer,
   navigationOptions: {
